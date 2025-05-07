@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Budget Buddy</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: qlineargradient(
+    spread:pad,
+    x1:1, y1:1,
+    x2:0, y2:0,
+    stop:0 rgba(178, 255, 218, 255),
+    stop:0.5 rgba(102, 217, 192, 235),
+    stop:1 rgba(38, 166, 154, 255)
+);
+font-family: Noto Sans SC;
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_7">
+      <item>
+       <widget class="QFrame" name="balance_frame">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgba(255, 255, 255, 60);
+border: 1px solid rgba(0, 100, 100, 60);
+border-radius: 7px;
+color: #004d4d;
+</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <property name="leftMargin">
+          <number>12</number>
+         </property>
+         <property name="topMargin">
+          <number>12</number>
+         </property>
+         <property name="rightMargin">
+          <number>12</number>
+         </property>
+         <property name="bottomMargin">
+          <number>12</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_current_balance">
+           <property name="styleSheet">
+            <string notr="true">font-weight: bold;
+font-size: 20pt;
+background-color: none;
+border: none;</string>
+           </property>
+           <property name="text">
+            <string>Current balance</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_balance">
+           <property name="styleSheet">
+            <string notr="true">font-size: 30pt;
+background-color: none;
+border: none;</string>
+           </property>
+           <property name="text">
+            <string>$1200</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="icon_up_arrow">
+             <property name="maximumSize">
+              <size>
+               <width>24</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: none;
+border: none;
+padding-top: 10px;</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="pixmap">
+              <pixmap resource="res-rs.qrc">:/icons/icons/north_west_white_24dp.svg</pixmap>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_income">
+             <property name="styleSheet">
+              <string notr="true">font-size: 16pt;
+background-color: none;
+border: none;
+font-weigth: bold;
+padding-top: 10px;</string>
+             </property>
+             <property name="text">
+              <string>Income</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QLabel" name="income_balance">
+           <property name="styleSheet">
+            <string notr="true">font-size: 20pt;
+background-color: none;
+border: none;</string>
+           </property>
+           <property name="text">
+            <string>$1200</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="icon_down_arrow">
+             <property name="maximumSize">
+              <size>
+               <width>24</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: none;
+border: none;
+padding-top: 10px;</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="pixmap">
+              <pixmap resource="res-rs.qrc">:/icons/icons/call_received_white_24dp.svg</pixmap>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="lable_outcome">
+             <property name="styleSheet">
+              <string notr="true">font-size: 16pt;
+background-color: none;
+border: none;
+font-weigth: bold;
+padding-top: 10px;</string>
+             </property>
+             <property name="text">
+              <string>Outcome</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QLabel" name="outcome_balance">
+           <property name="styleSheet">
+            <string notr="true">font-size: 20pt;
+background-color: none;
+border: none;</string>
+           </property>
+           <property name="text">
+            <string>$1200</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="categories_frame">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgba(255, 255, 255, 60);
+border: 1px solid rgba(0, 100, 100, 60);
+border-radius: 7px;
+color: #004d4d;</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <property name="leftMargin">
+          <number>12</number>
+         </property>
+         <property name="topMargin">
+          <number>12</number>
+         </property>
+         <property name="rightMargin">
+          <number>12</number>
+         </property>
+         <property name="bottomMargin">
+          <number>12</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="lable_expense_tracker">
+           <property name="styleSheet">
+            <string notr="true">font-weight: bold;
+font-size: 20pt;
+background-color: none;
+border: none;</string>
+           </property>
+           <property name="text">
+            <string>Expense categories</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_6">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="icon_groceries">
+             <property name="maximumSize">
+              <size>
+               <width>24</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: none;
+border: none;
+</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="pixmap">
+              <pixmap resource="res-rs.qrc">:/icons/icons/local_grocery_store_white_24dp.svg</pixmap>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_groceries">
+             <property name="styleSheet">
+              <string notr="true">font-weigth: bold;
+font-size: 14pt;
+background-color: none;
+border: none;
+</string>
+             </property>
+             <property name="text">
+              <string>Groceries</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="balance_groceries">
+             <property name="styleSheet">
+              <string notr="true">font-size: 16pt;
+background-color: none;
+border: none;
+</string>
+             </property>
+             <property name="text">
+              <string>$1000</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="icon_entertainment">
+             <property name="maximumSize">
+              <size>
+               <width>24</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: none;
+border: none;
+</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="pixmap">
+              <pixmap resource="res-rs.qrc">:/icons/icons/sports_esports_white_24dp.svg</pixmap>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_entertainment">
+             <property name="styleSheet">
+              <string notr="true">font-weigth: bold;
+font-size: 14pt;
+background-color: none;
+border: none;
+</string>
+             </property>
+             <property name="text">
+              <string>Entertainment</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="balance_entertainment">
+             <property name="styleSheet">
+              <string notr="true">font-size: 16pt;
+background-color: none;
+border: none;
+</string>
+             </property>
+             <property name="text">
+              <string>$1000</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_4">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="icon_auto">
+             <property name="maximumSize">
+              <size>
+               <width>24</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: none;
+border: none;
+</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="pixmap">
+              <pixmap resource="res-rs.qrc">:/icons/icons/directions_car_white_24dp.svg</pixmap>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_auto">
+             <property name="styleSheet">
+              <string notr="true">font-weigth: bold;
+font-size: 14pt;
+background-color: none;
+border: none;
+</string>
+             </property>
+             <property name="text">
+              <string>Auto</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="balance_auto">
+             <property name="styleSheet">
+              <string notr="true">font-size: 16pt;
+background-color: none;
+border: none;
+</string>
+             </property>
+             <property name="text">
+              <string>$1000</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="icon_other">
+             <property name="maximumSize">
+              <size>
+               <width>24</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: none;
+border: none;
+</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="pixmap">
+              <pixmap resource="res-rs.qrc">:/icons/icons/list_white_24dp.svg</pixmap>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_other">
+             <property name="styleSheet">
+              <string notr="true">font-weigth: bold;
+font-size: 14pt;
+background-color: none;
+border: none;
+</string>
+             </property>
+             <property name="text">
+              <string>Other</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="balance_other">
+             <property name="styleSheet">
+              <string notr="true">font-size: 16pt;
+background-color: none;
+border: none;
+</string>
+             </property>
+             <property name="text">
+              <string>$1000</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_8">
+      <item>
+       <widget class="QPushButton" name="btn_new_transaction">
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+background-color: rgba(255,255,255,30);
+border: 1px solid rgba(255,255,255,40);
+border-radius: 7px;
+width: 230px;
+height: 50px
+}
+
+QPushButton:hover {
+background-color: rgba(255,255,255,40);
+}
+
+QPushButton:pressed {
+background-color: rgba(255,255,255,70);
+}</string>
+        </property>
+        <property name="text">
+         <string>New Transaction</string>
+        </property>
+        <property name="icon">
+         <iconset resource="res-rs.qrc">
+          <normaloff>:/icons/icons/post_add_white_24dp.svg</normaloff>:/icons/icons/post_add_white_24dp.svg</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_edit_transaction">
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+background-color: rgba(255,255,255,30);
+border: 1px solid rgba(255,255,255,40);
+border-radius: 7px;
+width: 230px;
+height: 50px
+}
+
+QPushButton:hover {
+background-color: rgba(255,255,255,40);
+}
+
+QPushButton:pressed {
+background-color: rgba(255,255,255,70);
+}</string>
+        </property>
+        <property name="text">
+         <string>Edit Transaction</string>
+        </property>
+        <property name="icon">
+         <iconset resource="res-rs.qrc">
+          <normaloff>:/icons/icons/edit_white_24dp.svg</normaloff>:/icons/icons/edit_white_24dp.svg</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_3">
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+background-color: rgba(255,255,255,30);
+border: 1px solid rgba(255,255,255,40);
+border-radius: 7px;
+width: 230px;
+height: 50px
+}
+
+QPushButton:hover {
+background-color: rgba(255,255,255,40);
+}
+
+QPushButton:pressed {
+background-color: rgba(255,255,255,70);
+}</string>
+        </property>
+        <property name="text">
+         <string>Delete Transaction</string>
+        </property>
+        <property name="icon">
+         <iconset resource="res-rs.qrc">
+          <normaloff>:/icons/icons/delete_white_24dp.svg</normaloff>:/icons/icons/delete_white_24dp.svg</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QTableView" name="tableView">
+      <property name="styleSheet">
+       <string notr="true">QTableView {
+background-color: rgba(255, 255, 255, 30);
+border: 1px solid rgba(255, 255, 255, 40);
+border-bottom-right-radius: 7px;
+border-bottom-left-radius: 7px;
+}
+
+QTableView::section {
+background-color: rgba(53, 53, 53);
+border: none;
+height: 50px;
+font-size: 14pt;
+}
+
+QTableView::item {
+border: none;
+border-bottom: rgba(255, 255, 255, 50);
+}
+
+QTableView::item:selected {
+border: none;
+color: rgba(255, 255, 255);
+background-color: rgba(255, 255, 255, 50);
+}</string>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="showGrid">
+       <bool>false</bool>
+      </property>
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>135</number>
+      </attribute>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="res-rs.qrc"/>
+ </resources>
+ <connections/>
+</ui>
